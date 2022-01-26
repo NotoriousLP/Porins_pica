@@ -1,5 +1,5 @@
 
-public class Klients extends Pica {
+public class Klients {
 	//Atribūti
 	public String vards;
 	public String uzvards;
@@ -8,8 +8,7 @@ public class Klients extends Pica {
 	public boolean vaiSutaMajas;
 	double majasPiegadesCena;
 	//Konstruktors
-	public Klients(String klientaVards, String klientaUzvards, String klientaTelefons, String klientaAdrese, boolean vaiKlientsSutaMajas, String picaTips, String picasGarsa, String picaPiedeva, int picascm, double picaCena) {
-		super(picaTips,picasGarsa,picaPiedeva,picascm,picaCena);
+	public Klients(String klientaVards, String klientaUzvards, String klientaTelefons, String klientaAdrese, boolean vaiKlientsSutaMajas) {
 		this.vards = klientaVards;
 		this.uzvards = klientaUzvards;
 		this.telefons = klientaTelefons;
