@@ -8,8 +8,8 @@ public class Klients extends Pica {
 	public boolean vaiSutaMajas;
 	double majasPiegadesCena;
 	//Konstruktors
-	public Klients(String klientaVards, String klientaUzvards, String klientaTelefons, String klientaAdrese, boolean vaiKlientsSutaMajas, String picaTips, String picasGarsa, String picaPiedeva, double picaCena) {
-		super(picaTips,picasGarsa,picaPiedeva,picaCena);
+	public Klients(String klientaVards, String klientaUzvards, String klientaTelefons, String klientaAdrese, boolean vaiKlientsSutaMajas, String picaTips, String picasGarsa, String picaPiedeva, int picascm, double picaCena) {
+		super(picaTips,picasGarsa,picaPiedeva,picascm,picaCena);
 		this.vards = klientaVards;
 		this.uzvards = klientaUzvards;
 		this.telefons = klientaTelefons;

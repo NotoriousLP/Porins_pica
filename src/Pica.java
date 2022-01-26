@@ -5,11 +5,13 @@ public class Pica{
 	public String garsa;
 	public String piedeva;
 	public double cena;
+	public int cm;
 	double skaits;
-	public Pica(String picaTips, String picasGarsa, String picaPiedeva, double picaCena) {
+	public Pica(String picaTips, String picasGarsa, String picaPiedeva, int picascm, double picaCena) {
 		this.tips = picaTips;
 		this.garsa = picasGarsa;
 		this.piedeva = picaPiedeva;
+		this.cm = picascm;
 		this.cena = picaCena;
 	}
 	//Metodes
