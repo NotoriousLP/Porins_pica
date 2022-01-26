@@ -2,11 +2,13 @@
 public class Pica{
 	//Atribūti
 	public String tips;
+	public String garsa;
 	public String piedeva;
 	public double cena;
 	double skaits;
-	public Pica(String picaTips, String picaPiedeva, double picaCena) {
+	public Pica(String picaTips, String picasGarsa, String picaPiedeva, double picaCena) {
 		this.tips = picaTips;
+		this.garsa = picasGarsa;
 		this.piedeva = picaPiedeva;
 		this.cena = picaCena;
 	}
