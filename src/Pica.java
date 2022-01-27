@@ -4,28 +4,29 @@ public class Pica{
 	public String tips;
 	public String garsa;
 	public String piedeva;
-	public double cena;
 	public int cm;
+	public double cena;
 	double skaits;
-	public Pica(String picaTips, String picasGarsa, String picaPiedeva, int picascm, double picaCena) {
+	public Pica(String picaTips, String picasGarsa, String picaPiedeva, int picascm, double picasCena) {
 		this.tips = picaTips;
 		this.garsa = picasGarsa;
 		this.piedeva = picaPiedeva;
 		this.cm = picascm;
-		this.cena = picaCena;
+		this.cena = picasCena;
 	}
 	//Metodes
-	public String noteiktTipu(String tips) {
+	public String noteiktTipu() {
 		return tips;
 	}
-	public String noteiktPiedevu(String piedeva) {
+	public String noteiktPiedevu() {
 		return piedeva;
 	}
-	public double noteiktCenu(double cena) {
-		return cena;
-	}
+
 	public double vairakasPicas(double cena) {
 		skaits = skaits * cena;
 		return skaits;
+	}
+	public double noteiktCenu() {
+		return cena;
 	}
 }
