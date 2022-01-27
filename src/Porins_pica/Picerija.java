@@ -1,4 +1,7 @@
 package Porins_pica;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -71,7 +74,21 @@ public class Picerija {
 		cena = cena+piegade;
 		return cena;
 	}
-
+	public static void saglabat(Klients[] masivs, double cena) {
+		try{
+			FileWriter fw = new FileWriter("pica.txt", true);
+			PrintWriter raksta = new PrintWriter(fw);
+			for(int i=0; i<masivs.length; i++){
+				masivs[i].saglabatFaila();
+				raksta.println("Picas cena "+cena+"\n");
+			}
+			raksta.println("_________________________________");
+			raksta.close();
+			JOptionPane.showMessageDialog(null, "Informācija par klientas picu un cenu saglabāts failā", "Info", JOptionPane.INFORMATION_MESSAGE);
+		}catch(Exception e){
+			JOptionPane.showMessageDialog(null, "Kļūda  ierakstot faila, ","Kļūda ",JOptionPane.ERROR_MESSAGE);
+		}
+	}
 	public static void main(String[] args) {
 		String izvele;
 		JFrame fr= new JFrame();
@@ -122,7 +139,7 @@ public class Picerija {
 				klientaVards = JOptionPane.showInputDialog("Ievadi Klienta vārdu: ");
 				for(int i=0; i<klientuMasivs.length; i++) {
 					if(klientaVards.equals(klientuMasivs[i].nosakaVardu())){
-						//izdrukat(klientuMasivs);
+						saglabat(klientuMasivs,istaCena);
 					}else {
 						JOptionPane.showMessageDialog(fr, "Tādu klientu nevar atrast", "Brīdinājums",JOptionPane.WARNING_MESSAGE);
 					}

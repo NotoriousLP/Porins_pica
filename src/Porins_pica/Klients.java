@@ -1,5 +1,8 @@
 package Porins_pica;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 import javax.swing.JOptionPane;
 
 public class Klients extends Pica {
@@ -42,6 +45,22 @@ public class Klients extends Pica {
 				+ "Picas piedeva "+piedeva+"\n"
 				+ "Picas diametrs "+cm);
 	}
+	public void saglabatFaila() {
+		try{
+			FileWriter fw = new FileWriter("pica.txt", true);
+			PrintWriter raksta = new PrintWriter(fw);
+			raksta.print("Klienta vārds "+vards+"\n"
+					+ "Klienta uzvārds "+uzvards+"\n"
+					+ "Klienta telefona numurs "+telefons+"\n"
+					+ "Klienta adrese "+Adrese+"\n"
+					+ "Klienta picas tips "+tips+"\n"
+					+ "Picas garša "+garsa+"\n"
+					+ "Picas piedeva "+piedeva+"\n"
+					+ "Picas diametrs "+cm);
+			raksta.close();
+		}catch(Exception e){
+			JOptionPane.showMessageDialog(null, "Kļūda  ierakstot faila, ","Kļūda ",JOptionPane.ERROR_MESSAGE);
+		}
 	
-	
+	}
 }
