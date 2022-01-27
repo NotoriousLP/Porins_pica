@@ -1,4 +1,4 @@
-
+package Porins_pica;
 public class Pica{
 	//Atribūti
 	public String tips;

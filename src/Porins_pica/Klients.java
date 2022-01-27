@@ -1,4 +1,4 @@
-
+package Porins_pica;
 
 public class Klients extends Pica {
 	//Atribūti
