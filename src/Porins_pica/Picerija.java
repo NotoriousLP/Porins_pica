@@ -1,6 +1,7 @@
 package Porins_pica;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
 public class Picerija {
 	static Klients[] klientuNaksana(Klients[] masivs) {
 		boolean sutitMajas;
@@ -61,11 +62,21 @@ public class Picerija {
 		}
 		return masivs;
 	}
+	public static double izrekinasana(double cena, double skaits, double piegade) {
+		cena = (cena*skaits);
+		cena = cena+piegade;
+		System.out.println(cena);
+		return cena;
+	}
 	
 	public static void main(String[] args) {
 		String izvele;
 		JFrame fr= new JFrame();
+		Pica[] picasMasivs = null;
 		Klients[] klientuMasivs = null;
+		double cena=0;
+		double istaCena=0;
+		double brauksanasCena=0;
 		int skaits;
 		do {
 			izvele = JOptionPane.showInputDialog("1-Klienta pica | 2-Sūtišana | 3-Saglabāt datus failā |stop - Programmas beigas");
@@ -81,7 +92,17 @@ public class Picerija {
 				}
 				break;
 			case "2":
-				
+				String klientaVards = JOptionPane.showInputDialog("Ievadi Klienta vārdu: ");
+				for(int i=0; i<klientuMasivs.length; i++) {
+					if(klientaVards.equals(klientuMasivs[i].nosakaVardu())){
+						cena = klientuMasivs[i].noteiktCenu();
+						brauksanasCena = klientuMasivs[i].jaSutaMajas();
+						double picuSkaits = Integer.parseInt(JOptionPane.showInputDialog("Cik šāda veida picas sūtis?"));
+						System.out.println(cena);
+						istaCena = izrekinasana(cena, picuSkaits, brauksanasCena);
+						System.out.println(istaCena);
+					}
+				}
 				break;
 			case "3":
 				
