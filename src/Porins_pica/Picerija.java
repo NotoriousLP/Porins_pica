@@ -68,7 +68,8 @@ public class Picerija {
 		Klients[] klientuMasivs = null;
 		int skaits;
 		do {
-			izvele = JOptionPane.showInputDialog("1-Klienta pica | 2-Sūtišana | 3-Saglabāt datus failā ");
+			izvele = JOptionPane.showInputDialog("1-Klienta pica | 2-Sūtišana | 3-Saglabāt datus failā |stop - Programmas beigas");
+			izvele = izvele.toLowerCase();
 			switch(izvele) {
 			case "1":
 				try {
@@ -78,6 +79,12 @@ public class Picerija {
 				}catch(Exception e) {
 					JOptionPane.showMessageDialog(fr, "Darbība nepastāv!", "Kļūme",JOptionPane.ERROR_MESSAGE); 
 				}
+				break;
+			case "2":
+				
+				break;
+			case "3":
+				
 				break;
 			case "stop": JOptionPane.showMessageDialog(fr, "Programma apturēta!", "Brīdinājums",JOptionPane.WARNING_MESSAGE); break;
 			default: JOptionPane.showMessageDialog(fr, "Darbība nepastāv!", "Kļūme",JOptionPane.ERROR_MESSAGE); 
