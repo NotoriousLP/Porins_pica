@@ -1,4 +1,6 @@
 package Porins_pica;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
@@ -74,13 +76,27 @@ public class Picerija {
 		cena = cena+piegade;
 		return cena;
 	}
+	public static void nolasit() {
+		String teksts, virkne="";
+		try{
+			FileReader fr = new FileReader("pica.txt");
+			BufferedReader lasa = new BufferedReader(fr);
+			while((teksts = lasa.readLine()) !=null){
+				virkne += teksts+"\n";
+			}
+			lasa.close();
+			JOptionPane.showMessageDialog(null, virkne, "Informācija",JOptionPane.INFORMATION_MESSAGE);
+		}catch(Exception e){
+			JOptionPane.showMessageDialog(null, "Kļūda nolasot faila, ","Kļūda",JOptionPane.ERROR_MESSAGE);
+		}
+	}
 	public static void saglabat(Klients[] masivs, double cena) {
 		try{
 			FileWriter fw = new FileWriter("pica.txt", true);
 			PrintWriter raksta = new PrintWriter(fw);
 			for(int i=0; i<masivs.length; i++){
 				masivs[i].saglabatFaila();
-				raksta.println("Picas cena "+cena+"\n");
+				raksta.println("Picas cena "+cena);
 			}
 			raksta.println("_________________________________");
 			raksta.close();
@@ -146,7 +162,7 @@ public class Picerija {
 				}
 				break;
 			case "5":
-				
+				nolasit();
 				break;	
 			case "stop": JOptionPane.showMessageDialog(fr, "Programma apturēta!", "Brīdinājums",JOptionPane.WARNING_MESSAGE); break;
 			default: JOptionPane.showMessageDialog(fr, "Darbība nepastāv!", "Kļūme",JOptionPane.ERROR_MESSAGE); 

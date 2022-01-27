@@ -56,7 +56,7 @@ public class Klients extends Pica {
 					+ "Klienta picas tips "+tips+"\n"
 					+ "Picas garša "+garsa+"\n"
 					+ "Picas piedeva "+piedeva+"\n"
-					+ "Picas diametrs "+cm);
+					+ "Picas diametrs "+cm+"\n");
 			raksta.close();
 		}catch(Exception e){
 			JOptionPane.showMessageDialog(null, "Kļūda  ierakstot faila, ","Kļūda ",JOptionPane.ERROR_MESSAGE);

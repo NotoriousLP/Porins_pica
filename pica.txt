@@ -1,0 +1,10 @@
+Klienta vārds Lauris
+Klienta uzvārds por
+Klienta telefona numurs 24214231
+Klienta adrese Oskara
+Klienta picas tips apaļš
+Picas garša gaļa
+Picas piedeva majonēze
+Picas diametrs 50
+Picas cena 12.84
+_________________________________
