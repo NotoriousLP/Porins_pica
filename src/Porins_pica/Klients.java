@@ -12,7 +12,7 @@ public class Klients extends Pica {
 	double majasPiegadesCena;
 	//Konstruktors
 	public Klients(String klientaVards, String klientaUzvards, String klientaTelefons, String klientaAdrese, boolean vaiKlientsSutaMajas, String picaTips, String picasGarsa, String picaPiedeva, int picascm, double picasCena) {
-		super(picaTips, picasGarsa, picaPiedeva, picascm,picasCena);
+		super(picaTips, picasGarsa, picaPiedeva, picascm, picasCena);
 		this.vards = klientaVards;
 		this.uzvards = klientaUzvards;
 		this.telefons = klientaTelefons;

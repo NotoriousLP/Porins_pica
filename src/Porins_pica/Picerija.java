@@ -7,7 +7,6 @@ public class Picerija {
 		boolean sutitMajas;
 		int cm;
 		double cena=0;
-		String tips;
 		for(int i=0; i<masivs.length; i++) {
 		String vards =  JOptionPane.showInputDialog("Klienta vārds");
 		String uzvards =  JOptionPane.showInputDialog("Klienta uzvārds");
@@ -20,15 +19,18 @@ public class Picerija {
 		}else {
 			sutitMajas = false;
 		}
-		tips = JOptionPane.showInputDialog("Kādu kontūru picai dosi? - Kvadrāts || Apaļš");
+		String tips = JOptionPane.showInputDialog("Kādu kontūru picai dosi? - Kvadrāts || Apaļš");
 		tips = tips.toLowerCase();
 		if(tips.equals("kvadrāts")) {
 			cena = cena+0.70;
 		}else if(tips.equals("apaļš")) {
 			cena = cena+0.50;
+		}else {
+			cena = cena+0.00;
 		}
+		System.out.println(tips);
 		String garsa = JOptionPane.showInputDialog("Kādu garša picai būs? - Siers | Gaļa | Sēnes");
-		garsa = tips.toLowerCase();
+		garsa = garsa.toLowerCase();
 		if(garsa.equals("siers")) {
 			cena = cena+0.42;
 		}else if(garsa.equals("gaļa")) {
@@ -36,8 +38,9 @@ public class Picerija {
 		}else if(garsa.equals("sēnes")) {
 			cena = cena+1.42;
 		}
+		System.out.println(garsa);
 		String piedeva = JOptionPane.showInputDialog("Kādas piedevas picai būs? - Kečups | Majonēze | Sīpoli");
-		piedeva = tips.toLowerCase();
+		piedeva = piedeva.toLowerCase();
 		if(piedeva.equals("kečups")) {
 			cena = cena+0.22;
 		}else if(piedeva.equals("majonēze")) {
@@ -59,16 +62,16 @@ public class Picerija {
 		}while(cm<10 || cm>50);
 		
 		masivs[i] = new Klients(vards,uzvards,telefons,Adrese,sutitMajas,tips,garsa,piedeva,cm,cena);
+		masivs[i].izvaditCenu();
 		}
 		return masivs;
 	}
-	public static double izrekinasana(double cena, double skaits, double piegade) {
+	public static double izrekinasana(double cena, int skaits, double piegade) {
 		cena = (cena*skaits);
 		cena = cena+piegade;
-		System.out.println(cena);
 		return cena;
 	}
-	
+
 	public static void main(String[] args) {
 		String izvele;
 		JFrame fr= new JFrame();
@@ -97,16 +100,37 @@ public class Picerija {
 					if(klientaVards.equals(klientuMasivs[i].nosakaVardu())){
 						cena = klientuMasivs[i].noteiktCenu();
 						brauksanasCena = klientuMasivs[i].jaSutaMajas();
-						double picuSkaits = Integer.parseInt(JOptionPane.showInputDialog("Cik šāda veida picas sūtis?"));
-						System.out.println(cena);
+						int picuSkaits = Integer.parseInt(JOptionPane.showInputDialog("Cik šāda veida picas sūtis?"));
 						istaCena = izrekinasana(cena, picuSkaits, brauksanasCena);
-						System.out.println(istaCena);
+					}else {
+						JOptionPane.showMessageDialog(fr, "Tādu klientu nevar atrast", "Brīdinājums",JOptionPane.WARNING_MESSAGE);
 					}
 				}
 				break;
 			case "3":
-				
+				klientaVards = JOptionPane.showInputDialog("Ievadi Klienta vārdu: ");
+				for(int i=0; i<klientuMasivs.length; i++) {
+					if(klientaVards.equals(klientuMasivs[i].nosakaVardu())){
+						klientuMasivs[i].izvadit();
+						JOptionPane.showMessageDialog(fr, "Picas cena būs "+istaCena);
+					}else {
+						JOptionPane.showMessageDialog(fr, "Tādu klientu nevar atrast", "Brīdinājums",JOptionPane.WARNING_MESSAGE);
+					}
+				}
 				break;
+			case "4":
+				klientaVards = JOptionPane.showInputDialog("Ievadi Klienta vārdu: ");
+				for(int i=0; i<klientuMasivs.length; i++) {
+					if(klientaVards.equals(klientuMasivs[i].nosakaVardu())){
+						//izdrukat(klientuMasivs);
+					}else {
+						JOptionPane.showMessageDialog(fr, "Tādu klientu nevar atrast", "Brīdinājums",JOptionPane.WARNING_MESSAGE);
+					}
+				}
+				break;
+			case "5":
+				
+				break;	
 			case "stop": JOptionPane.showMessageDialog(fr, "Programma apturēta!", "Brīdinājums",JOptionPane.WARNING_MESSAGE); break;
 			default: JOptionPane.showMessageDialog(fr, "Darbība nepastāv!", "Kļūme",JOptionPane.ERROR_MESSAGE); 
 			}

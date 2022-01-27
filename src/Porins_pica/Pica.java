@@ -1,4 +1,7 @@
 package Porins_pica;
+
+import javax.swing.JOptionPane;
+
 public class Pica{
 	//Atribūti
 	public String tips;
@@ -21,12 +24,22 @@ public class Pica{
 	public String noteiktPiedevu() {
 		return piedeva;
 	}
-
-	public double vairakasPicas(double cena) {
-		skaits = skaits * cena;
-		return skaits;
+	public String noteiktGarsu() {
+		return garsa;
+	}
+	public int noteiktcm() {
+		return cm;
 	}
 	public double noteiktCenu() {
 		return cena;
+	}
+	public void izvaditCenu() {
+		JOptionPane.showMessageDialog(null, "Picas cena, 1 gab ir "+cena);
+	}
+	public void izvadit() {
+		JOptionPane.showMessageDialog(null,"Klienta picas tips "+tips+"\n"
+				+ "Picas garša "+garsa+"\n"
+				+ "Picas piedeva "+piedeva+"\n"
+				+ "Picas diametrs "+cm);
 	}
 }
