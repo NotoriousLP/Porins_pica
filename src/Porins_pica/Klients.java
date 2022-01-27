@@ -43,8 +43,10 @@ public class Klients extends Pica {
 				+ "Klienta picas tips "+tips+"\n"
 				+ "Picas garša "+garsa+"\n"
 				+ "Picas piedeva "+piedeva+"\n"
-				+ "Picas diametrs "+cm);
+				+ "Picas diametrs "+cm
+				+ "Picas cena pa 1 gabalu ir "+cena+" eur");
 	}
+
 	public void saglabatFaila() {
 		try{
 			FileWriter fw = new FileWriter("pica.txt", true);

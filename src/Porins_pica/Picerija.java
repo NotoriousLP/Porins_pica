@@ -33,7 +33,6 @@ public class Picerija {
 		}else {
 			cena = cena+0.00;
 		}
-		System.out.println(tips);
 		String garsa = JOptionPane.showInputDialog("Kādu garša picai būs? - Siers | Gaļa | Sēnes");
 		garsa = garsa.toLowerCase();
 		if(garsa.equals("siers")) {
@@ -43,7 +42,6 @@ public class Picerija {
 		}else if(garsa.equals("sēnes")) {
 			cena = cena+1.42;
 		}
-		System.out.println(garsa);
 		String piedeva = JOptionPane.showInputDialog("Kādas piedevas picai būs? - Kečups | Majonēze | Sīpoli");
 		piedeva = piedeva.toLowerCase();
 		if(piedeva.equals("kečups")) {
@@ -54,26 +52,30 @@ public class Picerija {
 			cena = cena+0.52;
 		}
 		do {
-		cm = Integer.parseInt(JOptionPane.showInputDialog("Picas diametrs - 10|20|30|50"));	
+		cm = Integer.parseInt(JOptionPane.showInputDialog("Picas diametrs - 10|20|30|40|50"));	
 		if(cm==10) {
 			cena = cena+0.70;
 		}else if(cm==20) {
 			cena = cena+1.00;
 		}else if(cm==30) {
 			cena = cena+1.70;
+		}else if(cm==40) {
+			cena = cena+2.00;
 		}else if(cm==50) {
 			cena = cena+2.70;
 		}
 		}while(cm<10 || cm>50);
-		
 		masivs[i] = new Klients(vards,uzvards,telefons,Adrese,sutitMajas,tips,garsa,piedeva,cm,cena);
 		masivs[i].izvaditCenu();
+		cena = 0;
+		JOptionPane.showMessageDialog(null, "Klients saglabāts", "Info", JOptionPane.INFORMATION_MESSAGE);
 		}
 		return masivs;
 	}
 	public static double izrekinasana(double cena, int skaits, double piegade) {
 		cena = (cena*skaits);
 		cena = cena+piegade;
+		JOptionPane.showMessageDialog(null, "Rēķins gatavs, tie ir "+cena+" eur", "Informācija",JOptionPane.INFORMATION_MESSAGE);
 		return cena;
 	}
 	public static void nolasit() {
@@ -95,9 +97,12 @@ public class Picerija {
 			FileWriter fw = new FileWriter("pica.txt", true);
 			PrintWriter raksta = new PrintWriter(fw);
 			for(int i=0; i<masivs.length; i++){
+				if(masivs.equals(masivs[i].nosakaVardu())){
 				masivs[i].saglabatFaila();
-				raksta.println("Picas cena "+cena);
+				raksta.println("Picas cena "+cena); 
+				}
 			}
+		
 			raksta.println("_________________________________");
 			raksta.close();
 			JOptionPane.showMessageDialog(null, "Informācija par klientas picu un cenu saglabāts failā", "Info", JOptionPane.INFORMATION_MESSAGE);
@@ -115,7 +120,7 @@ public class Picerija {
 		double brauksanasCena=0;
 		int skaits;
 		do {
-			izvele = JOptionPane.showInputDialog("1-Klienta pica | 2-Sūtišana | 3-Saglabāt datus failā |stop - Programmas beigas");
+			izvele = JOptionPane.showInputDialog("1-Klienta pica | 2-Sūtišana | 3-Izvadīt |4-Saglabāt datus failā |5-Nolasīt datus no faila |stop - Programmas beigas");
 			izvele = izvele.toLowerCase();
 			switch(izvele) {
 			case "1":
