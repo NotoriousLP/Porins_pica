@@ -33,9 +33,6 @@ public class Pica{
 	public double noteiktCenu() {
 		return cena;
 	}
-	public void izvaditCenu() {
-		JOptionPane.showMessageDialog(null, "Picas cena, 1 gab ir "+cena);
-	}
 	public void izvadit() {
 		JOptionPane.showMessageDialog(null,"Klienta picas tips "+tips+"\n"
 				+ "Picas garša "+garsa+"\n"
