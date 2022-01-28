@@ -33,7 +33,7 @@ public class Klients extends Pica {
 				+ "Klienta picas tips "+tips+"\n"
 				+ "Picas garša "+garsa+"\n"
 				+ "Picas piedeva "+piedeva+"\n"
-				+ "Picas diametrs "+cm
+				+ "Picas diametrs "+cm+"\n"
 				+ "Picas cena ir "+cena+" eur");
 	}
 

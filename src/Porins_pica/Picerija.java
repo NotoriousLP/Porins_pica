@@ -112,7 +112,6 @@ public class Picerija {
 		String izvele;
 		JFrame fr= new JFrame();
 		Klients[] klientuMasivs = null;
-		double cena=0;
 		int skaits;
 		do {
 			izvele = JOptionPane.showInputDialog("1-Klienta pica | 2-Klientu citu veidu picas sūtīšana | 3-Izvadīt |4-Saglabāt datus failā |5-Nolasīt datus no faila |stop - Programmas beigas");
@@ -131,8 +130,9 @@ public class Picerija {
 				boolean atrasts = false;
 				String klientaVards = JOptionPane.showInputDialog("Ievadi Klienta vārdu, kurš vēlas savādāku picu pasūtīt: ");
 				for(int i=0; i<klientuMasivs.length; i++) {
-					if(klientaVards.equals(klientuMasivs[i].nosakaVardu())){
+					if(klientaVards.equalsIgnoreCase(klientuMasivs[i].nosakaVardu())){
 						atrasts = true;
+						double cena=0;
 						String sutaMajas = JOptionPane.showInputDialog("Vai klients sūta mājas | Jā vai nē|");
 						double piegadesCena;
 						sutaMajas = sutaMajas.toLowerCase();
@@ -141,13 +141,14 @@ public class Picerija {
 						}else {
 							piegadesCena = 0;
 						}
-						cena=0;
 						klientuMasivs[i].nomainitTipu(JOptionPane.showInputDialog("Kādu kontūru picai dosi? - Kvadrāts || Apaļš"));
 						klientuMasivs[i].nomainitGarsu(JOptionPane.showInputDialog("Kādu garša picai būs? - Siers | Gaļa | Sēnes"));
 						klientuMasivs[i].nomainitPiedevu(JOptionPane.showInputDialog("Kādas piedevas picai būs? - Kečups | Majonēze | Sīpoli"));
 						klientuMasivs[i].nomainitcm(Integer.parseInt(JOptionPane.showInputDialog("Picas diametrs - 10|20|30|40|50")));	
 						skaits = Integer.parseInt(JOptionPane.showInputDialog("Cik picas klients tādas pašas sūtīs?"));	
 						cena = izrekinasana(cena,skaits,piegadesCena);
+						klientuMasivs[i].jaunaCena(cena);
+						klientuMasivs[i].izvaditCenu();
 						}
 					}
 				if(atrasts == false) {
@@ -158,7 +159,7 @@ public class Picerija {
 				 atrasts = false;
 				klientaVards = JOptionPane.showInputDialog("Ievadi Klienta vārdu: ");
 				for(int i=0; i<klientuMasivs.length; i++) {
-					if(klientaVards.equals(klientuMasivs[i].nosakaVardu())){
+					if(klientaVards.equalsIgnoreCase(klientuMasivs[i].nosakaVardu())){
 						atrasts = true;
 						klientuMasivs[i].izvadit();
 						}
@@ -171,7 +172,7 @@ public class Picerija {
 				 atrasts = false;
 				klientaVards = JOptionPane.showInputDialog("Ievadi Klienta vārdu: ");
 				for(int i=0; i<klientuMasivs.length; i++) {
-					if(klientaVards.equals(klientuMasivs[i].nosakaVardu())){
+					if(klientaVards.equalsIgnoreCase(klientuMasivs[i].nosakaVardu())){
 						atrasts = true;
 						klientuMasivs[i].saglabatFaila();
 					}

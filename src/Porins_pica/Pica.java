@@ -25,7 +25,7 @@ public class Pica{
 		}else if(tips.equals("apaļš")) {
 			cena = cena+0.50;
 		}
-		jaunsTips = tips;
+		tips = jaunsTips;
 		return tips;
 	}
 	public String nomainitPiedevu(String jaunaPiedeva) {
@@ -36,7 +36,7 @@ public class Pica{
 		}else if(garsa.equals("sēnes")) {
 			cena = cena+1.42;
 		}
-		jaunaPiedeva = piedeva;
+		piedeva = jaunaPiedeva;
 		return piedeva;
 	}
 	public String nomainitGarsu(String jaunaGarsa) {
@@ -47,7 +47,7 @@ public class Pica{
 		}else if(piedeva.equals("sīpoli")) {
 			cena = cena+0.52;
 		}
-		jaunaGarsa = garsa;
+		garsa = jaunaGarsa;
 		return garsa;
 	}
 	public int nomainitcm(int jaunsCm) {
@@ -62,8 +62,12 @@ public class Pica{
 		}else if(cm==50) {
 			cena = cena+2.70;
 		}
-		jaunsCm = cm;
+		cm = jaunsCm;
 		return cm;
+	}
+	public double jaunaCena(double jaunaCena) {
+		cena = jaunaCena;
+		return cena;
 	}
 	public double noteiktCenu() {
 		return cena;

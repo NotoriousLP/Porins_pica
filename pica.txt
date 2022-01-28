@@ -50,3 +50,14 @@ Picas piedeva kečup
 Picas diametrs 30 
 Picas cena 13.36 euro
 _________________________________
+
+Klienta vārds Lauris 
+Klienta uzvārds dsa 
+Klienta telefona numurs das 
+Klienta adrese sda 
+Klienta picas tips apaļš 
+Picas garša gaļa 
+Picas piedeva sīpoli 
+Picas diametrs 50 
+Picas cena 10.42 euro
+_________________________________
