@@ -93,14 +93,14 @@ public class Picerija {
 			JOptionPane.showMessageDialog(null, "Kļūda nolasot faila, ","Kļūda",JOptionPane.ERROR_MESSAGE);
 		}
 	}
-	public static void saglabat(Klients[] masivs, double cena) {
+	public static void saglabat(Klients[] masivs) {
 		try{
 			FileWriter fw = new FileWriter("pica.txt", true);
 			PrintWriter raksta = new PrintWriter(fw);
+			
 			for(int i=0; i<masivs.length; i++){
 				masivs[i].saglabatFaila();
 			}
-		
 			raksta.println("_________________________________");
 			raksta.close();
 			JOptionPane.showMessageDialog(null, "Informācija par klientas picu un cenu saglabāts failā", "Info", JOptionPane.INFORMATION_MESSAGE);
@@ -113,11 +113,9 @@ public class Picerija {
 		JFrame fr= new JFrame();
 		Klients[] klientuMasivs = null;
 		double cena=0;
-		double istaCena=0;
-		double brauksanasCena=0;
 		int skaits;
 		do {
-			izvele = JOptionPane.showInputDialog("1-Klienta pica | 2-Sūtišana | 3-Izvadīt |4-Saglabāt datus failā |5-Nolasīt datus no faila |stop - Programmas beigas");
+			izvele = JOptionPane.showInputDialog("1-Klienta pica | 2-Klientu citu veidu picas sūtīšana | 3-Izvadīt |4-Saglabāt datus failā |5-Nolasīt datus no faila |stop - Programmas beigas");
 			izvele = izvele.toLowerCase();
 			switch(izvele) {
 			case "1":
@@ -130,31 +128,57 @@ public class Picerija {
 				}
 				break;
 			case "2":
-				String klientaVards = JOptionPane.showInputDialog("Ievadi Klienta vārdu: ");
+				boolean atrasts = false;
+				String klientaVards = JOptionPane.showInputDialog("Ievadi Klienta vārdu, kurš vēlas savādāku picu pasūtīt: ");
 				for(int i=0; i<klientuMasivs.length; i++) {
 					if(klientaVards.equals(klientuMasivs[i].nosakaVardu())){
-						cena = klientuMasivs[i].noteiktCenu();
-						int picuSkaits = Integer.parseInt(JOptionPane.showInputDialog("Cik šāda veida picas sūtis?"));
-						istaCena = izrekinasana(cena, picuSkaits, brauksanasCena);
-					}else {
-						JOptionPane.showMessageDialog(fr, "Tādu klientu nevar atrast", "Brīdinājums",JOptionPane.WARNING_MESSAGE);
+						atrasts = true;
+						String sutaMajas = JOptionPane.showInputDialog("Vai klients sūta mājas | Jā vai nē|");
+						double piegadesCena;
+						sutaMajas = sutaMajas.toLowerCase();
+						if(sutaMajas.equals("jā")) {
+							piegadesCena = 5.76;
+						}else {
+							piegadesCena = 0;
+						}
+						cena=0;
+						klientuMasivs[i].nomainitTipu(JOptionPane.showInputDialog("Kādu kontūru picai dosi? - Kvadrāts || Apaļš"));
+						klientuMasivs[i].nomainitGarsu(JOptionPane.showInputDialog("Kādu garša picai būs? - Siers | Gaļa | Sēnes"));
+						klientuMasivs[i].nomainitPiedevu(JOptionPane.showInputDialog("Kādas piedevas picai būs? - Kečups | Majonēze | Sīpoli"));
+						klientuMasivs[i].nomainitcm(Integer.parseInt(JOptionPane.showInputDialog("Picas diametrs - 10|20|30|40|50")));	
+						skaits = Integer.parseInt(JOptionPane.showInputDialog("Cik picas klients tādas pašas sūtīs?"));	
+						cena = izrekinasana(cena,skaits,piegadesCena);
+						}
 					}
+				if(atrasts == false) {
+					JOptionPane.showMessageDialog(fr, "Tādu klientu nevar atrast", "Brīdinājums",JOptionPane.WARNING_MESSAGE);
 				}
 				break;
 			case "3":
-				for(int i=0; i<klientuMasivs.length; i++) {
-						klientuMasivs[i].izvadit();
-					}
-				break;
-			case "4":
+				 atrasts = false;
 				klientaVards = JOptionPane.showInputDialog("Ievadi Klienta vārdu: ");
 				for(int i=0; i<klientuMasivs.length; i++) {
 					if(klientaVards.equals(klientuMasivs[i].nosakaVardu())){
-						saglabat(klientuMasivs,istaCena);
-				}else {
+						atrasts = true;
+						klientuMasivs[i].izvadit();
+						}
+					}
+				if(atrasts == false) {
 					JOptionPane.showMessageDialog(fr, "Tādu klientu nevar atrast", "Brīdinājums",JOptionPane.WARNING_MESSAGE);
 				}
-				}		
+				break;
+			case "4":
+				 atrasts = false;
+				klientaVards = JOptionPane.showInputDialog("Ievadi Klienta vārdu: ");
+				for(int i=0; i<klientuMasivs.length; i++) {
+					if(klientaVards.equals(klientuMasivs[i].nosakaVardu())){
+						atrasts = true;
+						klientuMasivs[i].saglabatFaila();
+					}
+				}
+				if(atrasts == false) {
+					JOptionPane.showMessageDialog(fr, "Tādu klientu nevar atrast", "Brīdinājums",JOptionPane.WARNING_MESSAGE);
+				}
 				break;
 			case "5":
 				nolasit();

@@ -21,6 +21,7 @@ public class Klients extends Pica {
 		this.Adrese = klientaAdrese;
 	}
 	//Metodes
+	
 	public String nosakaVardu() {
 		return vards;
 	}
@@ -49,7 +50,9 @@ public class Klients extends Pica {
 					+ "Picas piedeva "+piedeva+" \n"
 					+ "Picas diametrs "+cm+" \n"
 					+ "Picas cena "+cena+" euro\n");
+			raksta.println("_________________________________");
 			raksta.close();
+			JOptionPane.showMessageDialog(null, "Informācija par klientas picu un cenu saglabāts failā", "Info", JOptionPane.INFORMATION_MESSAGE);
 		}catch(Exception e){
 			JOptionPane.showMessageDialog(null, "Kļūda  ierakstot faila, ","Kļūda ",JOptionPane.ERROR_MESSAGE);
 		}

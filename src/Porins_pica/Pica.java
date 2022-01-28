@@ -18,16 +18,51 @@ public class Pica{
 		this.cena = picasCena;
 	}
 	//Metodes
-	public String noteiktTipu() {
+
+	public String nomainitTipu(String jaunsTips) {
+		if(tips.equals("kvadrāts")) {
+			cena = cena+0.70;
+		}else if(tips.equals("apaļš")) {
+			cena = cena+0.50;
+		}
+		jaunsTips = tips;
 		return tips;
 	}
-	public String noteiktPiedevu() {
+	public String nomainitPiedevu(String jaunaPiedeva) {
+		if(garsa.equals("siers")) {
+			cena = cena+0.42;
+		}else if(garsa.equals("gaļa")) {
+			cena = cena+0.94;
+		}else if(garsa.equals("sēnes")) {
+			cena = cena+1.42;
+		}
+		jaunaPiedeva = piedeva;
 		return piedeva;
 	}
-	public String noteiktGarsu() {
+	public String nomainitGarsu(String jaunaGarsa) {
+		if(piedeva.equals("kečups")) {
+			cena = cena+0.22;
+		}else if(piedeva.equals("majonēze")) {
+			cena = cena+0.14;
+		}else if(piedeva.equals("sīpoli")) {
+			cena = cena+0.52;
+		}
+		jaunaGarsa = garsa;
 		return garsa;
 	}
-	public int noteiktcm() {
+	public int nomainitcm(int jaunsCm) {
+		if(cm==10) {
+			cena = cena+0.70;
+		}else if(cm==20) {
+			cena = cena+1.00;
+		}else if(cm==30) {
+			cena = cena+1.70;
+		}else if(cm==40) {
+			cena = cena+2.00;
+		}else if(cm==50) {
+			cena = cena+2.70;
+		}
+		jaunsCm = cm;
 		return cm;
 	}
 	public double noteiktCenu() {
