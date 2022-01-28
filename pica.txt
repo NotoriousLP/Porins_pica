@@ -61,3 +61,58 @@ Picas piedeva sīpoli
 Picas diametrs 50 
 Picas cena 10.42 euro
 _________________________________
+
+Klienta vārds Lauris 
+Klienta uzvārds pdadsa 
+Klienta telefona numurs 21312341 
+Klienta adrese Dsads 
+Klienta picas tips kvadrāts 
+Picas garša siers 
+Picas piedeva kečups 
+Picas diametrs 10 
+Picas cena 2.04 euro
+_________________________________
+
+Klienta vārds Lauris 
+Klienta uzvārds Poriņš 
+Klienta telefona numurs 2131132 
+Klienta adrese Ventspils iela 
+Klienta picas tips apaļš 
+Picas garša sēnes 
+Picas piedeva sīpoli 
+Picas diametrs 50 
+Picas cena 10.28 euro
+_________________________________
+
+Klienta vārds Andris 
+Klienta uzvārds Bērziņš 
+Klienta telefona numurs 23131232 
+Klienta adrese Vānes iela 
+Klienta picas tips kvadrāts 
+Picas garša gaļa 
+Picas piedeva majonēze 
+Picas diametrs 30 
+Picas cena 9.24 euro
+_________________________________
+
+Klienta vārds Lauris 
+Klienta uzvārds Poriņš 
+Klienta telefona numurs 2131132 
+Klienta adrese Ventspils iela 
+Klienta picas tips kvadrāts 
+Picas garša siers 
+Picas piedeva kečups 
+Picas diametrs 30 
+Picas cena 8.8 euro
+_________________________________
+
+Klienta vārds Andris 
+Klienta uzvārds Bērziņš 
+Klienta telefona numurs 23131232 
+Klienta adrese Vānes iela 
+Klienta picas tips apaļš 
+Picas garša sēnes 
+Picas piedeva kečups 
+Picas diametrs 50 
+Picas cena 9.68 euro
+_________________________________
