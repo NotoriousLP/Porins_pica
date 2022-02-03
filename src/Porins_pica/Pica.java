@@ -9,13 +9,15 @@ public class Pica{
 	public String piedeva;
 	public int cm;
 	public double cena;
+	public String dzeramais;
 	double skaits;
-	public Pica(String picaTips, String picasGarsa, String picaPiedeva, int picascm, double picasCena) {
+	public Pica(String picaTips, String picasGarsa, String picaPiedeva, int picascm, String dzeramais, double picasCena) {
 		this.tips = picaTips;
 		this.garsa = picasGarsa;
 		this.piedeva = picaPiedeva;
 		this.cm = picascm;
 		this.cena = picasCena;
+		this.dzeramais = dzeramais;
 	}
 	//Metodes
 
@@ -38,6 +40,10 @@ public class Pica{
 	public double jaunaCena(double jaunaCena) {
 		cena = jaunaCena;
 		return cena;
+	}
+	public String jaunsDzeramais(String jaunsDzeramais){
+		dzeramais = jaunsDzeramais;
+		return dzeramais;
 	}
 	public double noteiktCenu() {
 		return cena;

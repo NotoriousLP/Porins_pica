@@ -13,8 +13,8 @@ public class Klients extends Pica {
 	public String Adrese;
 	double majasPiegadesCena;
 	//Konstruktors
-	public Klients(String klientaVards, String klientaUzvards, String klientaTelefons, String klientaAdrese, String picaTips, String picasGarsa, String picaPiedeva, int picascm, double picasCena) {
-		super(picaTips, picasGarsa, picaPiedeva, picascm, picasCena);
+	public Klients(String klientaVards, String klientaUzvards, String klientaTelefons, String klientaAdrese, String picaTips, String picasGarsa, String picaPiedeva, int picascm, String dzeramais, double picasCena) {
+		super(picaTips, picasGarsa, picaPiedeva, picascm,  dzeramais, picasCena);
 		this.vards = klientaVards;
 		this.uzvards = klientaUzvards;
 		this.telefons = klientaTelefons;
@@ -34,6 +34,7 @@ public class Klients extends Pica {
 				+ "Picas garša "+garsa+"\n"
 				+ "Picas piedeva "+piedeva+"\n"
 				+ "Picas diametrs "+cm+"\n"
+				+ "Dzeramais "+dzeramais+" euro\n"
 				+ "Picas cena ir "+cena+" eur");
 	}
 
@@ -49,6 +50,7 @@ public class Klients extends Pica {
 					+ "Picas garša "+garsa+" \n"
 					+ "Picas piedeva "+piedeva+" \n"
 					+ "Picas diametrs "+cm+" \n"
+					+ "Dzeramais "+dzeramais+" euro\n"
 					+ "Picas cena "+cena+" euro\n");
 			raksta.println("_________________________________");
 			raksta.close();

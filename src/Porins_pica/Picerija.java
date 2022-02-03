@@ -56,6 +56,15 @@ public class Picerija {
 		}else if(piedeva.equals("loki")){
 			cena = cena+0.15;
 		}
+		String dzeramais = JOptionPane.showInputDialog("Kāds dzeramais būs - Kola - 1.22 Euro | Fanta - 1.14 Euro | Sula - 0.52 Euro");
+		dzeramais = dzeramais.toLowerCase();
+		if(dzeramais.equals("Kola")) {
+			cena = cena+1.22;
+		}else if(dzeramais.equals("Fanta")) {
+			cena = cena+1.14;
+		}else if(dzeramais.equals("Sula")) {
+			cena = cena+0.52;
+		}
 		do {
 		cm = Integer.parseInt(JOptionPane.showInputDialog("Picas diametrs - 10 cm - 0.70 Eur|20cm - 1.00 Eur|30cm - 1.70 Eur|40cm - 2.00 Eur|50cm - 2.70 Eur"));	
 		if(cm==10) {
@@ -72,7 +81,7 @@ public class Picerija {
 		skaits = Integer.parseInt(JOptionPane.showInputDialog("Cik picas klients tādas pašas sūtīs?"));	
 		}while(cm<10 || cm>50);
 		cena = izrekinasana(cena,skaits,piegadesCena);
-		masivs[i] = new Klients(vards,uzvards,telefons,Adrese,tips,garsa,piedeva,cm,cena);
+		masivs[i] = new Klients(vards,uzvards,telefons,Adrese,tips,garsa,piedeva,cm,dzeramais,cena);
 		masivs[i].izvaditCenu();
 		cena = 0;
 		JOptionPane.showMessageDialog(null, "Klients saglabāts", "Info", JOptionPane.INFORMATION_MESSAGE);
@@ -148,15 +157,17 @@ public class Picerija {
 						}else {
 							piegadesCena = 0;
 						}
-						String tips = JOptionPane.showInputDialog("Kādu kontūru picai dosi? - Kvadrāts || Apaļš");
+						String tips = JOptionPane.showInputDialog("Kādu kontūru picai dosi? - Kvadrāts - 0.70 Eur | Apaļš- 0.50 Eur | Ovāls- 0.80 Eur");
 						tips = tips.toLowerCase();
 						if(tips.equals("kvadrāts")) {
 							cena = cena+0.70;
 						}else if(tips.equals("apaļš")) {
 							cena = cena+0.50;
+						}else if(tips.equals("ovāls")){
+							cena  = cena + 0.80;
 						}
 						klientuMasivs[i].nomainitTipu(tips);
-						String garsa = JOptionPane.showInputDialog("Kādu garša picai būs? - Siers | Gaļa | Sēnes");
+						String garsa = JOptionPane.showInputDialog("Kādu garša picai būs? - Siers - 0.42 Eur  | Gaļa- 0.94 Eur | Sēnes- 1.42 Eur | Salāti- 0.50 Eur");
 						garsa = garsa.toLowerCase();
 						if(garsa.equals("siers")) {
 							cena = cena+0.42;
@@ -164,9 +175,11 @@ public class Picerija {
 							cena = cena+0.94;
 						}else if(garsa.equals("sēnes")) {
 							cena = cena+1.42;
+						}else if(garsa.equals("salāti")){
+							cena = cena+0.50;
 						}
 						klientuMasivs[i].nomainitGarsu(garsa);
-						String piedeva = JOptionPane.showInputDialog("Kādas piedevas picai būs? - Kečups | Majonēze | Sīpoli");
+						String piedeva = JOptionPane.showInputDialog("Kādas piedevas picai būs? - Kečups  - 0.22 Eur | Majonēze- 0.14 Eur  | Sīpoli- 0.52 Eur  | Loki- 0.15 Eur");
 						piedeva = piedeva.toLowerCase();
 						if(piedeva.equals("kečups")) {
 							cena = cena+0.22;
@@ -174,21 +187,35 @@ public class Picerija {
 							cena = cena+0.14;
 						}else if(piedeva.equals("sīpoli")) {
 							cena = cena+0.52;
+						}else if(piedeva.equals("loki")){
+							cena = cena+0.15;
 						}
 						klientuMasivs[i].nomainitPiedevu(piedeva);
-						do {
-						cm = Integer.parseInt(JOptionPane.showInputDialog("Picas diametrs - 10|20|30|40|50"));	
-						if(cm==10) {
-							cena = cena+0.70;
-						}else if(cm==20) {
-							cena = cena+1.00;
-						}else if(cm==30) {
-							cena = cena+1.70;
-						}else if(cm==40) {
-							cena = cena+2.00;
-						}else if(cm==50) {
-							cena = cena+2.70;
+						String dzeramais = JOptionPane.showInputDialog("Kāds dzeramais būs - Kola - 1.22 Euro | Fanta - 1.14 Euro | Sula - 0.52 Euro");
+						dzeramais = dzeramais.toLowerCase();
+						if(dzeramais.equals("Kola")) {
+							cena = cena+1.22;
+						}else if(dzeramais.equals("Fanta")) {
+							cena = cena+1.14;
+						}else if(dzeramais.equals("Sula")) {
+							cena = cena+0.52;
 						}
+						klientuMasivs[i].jaunsDzeramais(dzeramais);
+						do {
+							do {
+								cm = Integer.parseInt(JOptionPane.showInputDialog("Picas diametrs - 10 cm - 0.70 Eur|20cm - 1.00 Eur|30cm - 1.70 Eur|40cm - 2.00 Eur|50cm - 2.70 Eur"));	
+								if(cm==10) {
+									cena = cena+0.70;
+								}else if(cm==20) {
+									cena = cena+1.00;
+								}else if(cm==30) {
+									cena = cena+1.70;
+								}else if(cm==40) {
+									cena = cena+2.00;
+								}else if(cm==50) {
+									cena = cena+2.70;
+								}
+								}while(cm<10 || cm>50);
 						klientuMasivs[i].nomainitcm(cm);
 						skaits = Integer.parseInt(JOptionPane.showInputDialog("Cik picas klients tādas pašas sūtīs?"));	
 						}while(cm<10 || cm>50);

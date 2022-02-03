@@ -116,3 +116,15 @@ Picas piedeva kečups
 Picas diametrs 50 
 Picas cena 9.68 euro
 _________________________________
+
+Klienta vārds Lauris 
+Klienta uzvārds dasdad 
+Klienta telefona numurs 2331421 
+Klienta adrese saddsa 
+Klienta picas tips ovāls 
+Picas garša sēnes 
+Picas piedeva majonēze 
+Picas diametrs 30 
+Dzeramais fanta euro
+Picas cena 12.18 euro
+_________________________________
