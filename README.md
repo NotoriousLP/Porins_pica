@@ -5,4 +5,5 @@ Java projekts, kurš realizē picas maksu. :smile:
 - [x] Pievienotas klases daļa
 - [x] Pievienota main daļa
 - [x] Pievienotas metodes
-- [ ] Pieliktas vairākas sastāvdaļas
+- [x] Pieliktas vairākas sastāvdaļas
+- [x] Ielikts jauns atribūts dzēriens
