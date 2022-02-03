@@ -25,14 +25,16 @@ public class Picerija {
 		}else {
 			piegadesCena = 0;
 		}
-		String tips = JOptionPane.showInputDialog("Kādu kontūru picai dosi? - Kvadrāts || Apaļš");
+		String tips = JOptionPane.showInputDialog("Kādu kontūru picai dosi? - Kvadrāts - 0.70 Eur | Apaļš- 0.50 Eur | Ovāls- 0.80 Eur");
 		tips = tips.toLowerCase();
 		if(tips.equals("kvadrāts")) {
 			cena = cena+0.70;
 		}else if(tips.equals("apaļš")) {
 			cena = cena+0.50;
+		}else if(tips.equals("ovāls")){
+			cena  = cena + 0.80;
 		}
-		String garsa = JOptionPane.showInputDialog("Kādu garša picai būs? - Siers | Gaļa | Sēnes");
+		String garsa = JOptionPane.showInputDialog("Kādu garša picai būs? - Siers - 0.42 Eur  | Gaļa- 0.94 Eur | Sēnes- 1.42 Eur | Salāti- 0.50 Eur");
 		garsa = garsa.toLowerCase();
 		if(garsa.equals("siers")) {
 			cena = cena+0.42;
@@ -40,8 +42,10 @@ public class Picerija {
 			cena = cena+0.94;
 		}else if(garsa.equals("sēnes")) {
 			cena = cena+1.42;
+		}else if(garsa.equals("salāti")){
+			cena = cena+0.50;
 		}
-		String piedeva = JOptionPane.showInputDialog("Kādas piedevas picai būs? - Kečups | Majonēze | Sīpoli");
+		String piedeva = JOptionPane.showInputDialog("Kādas piedevas picai būs? - Kečups  - 0.22 Eur | Majonēze- 0.14 Eur  | Sīpoli- 0.52 Eur  | Loki- 0.15 Eur");
 		piedeva = piedeva.toLowerCase();
 		if(piedeva.equals("kečups")) {
 			cena = cena+0.22;
@@ -49,9 +53,11 @@ public class Picerija {
 			cena = cena+0.14;
 		}else if(piedeva.equals("sīpoli")) {
 			cena = cena+0.52;
+		}else if(piedeva.equals("loki")){
+			cena = cena+0.15;
 		}
 		do {
-		cm = Integer.parseInt(JOptionPane.showInputDialog("Picas diametrs - 10|20|30|40|50"));	
+		cm = Integer.parseInt(JOptionPane.showInputDialog("Picas diametrs - 10 cm - 0.70 Eur|20cm - 1.00 Eur|30cm - 1.70 Eur|40cm - 2.00 Eur|50cm - 2.70 Eur"));	
 		if(cm==10) {
 			cena = cena+0.70;
 		}else if(cm==20) {
