@@ -5,5 +5,5 @@ Java projekts, kurš realizē picas maksu. :pizza:
 - [x] Pievienotas klases daļa
 - [x] Pievienota main daļa
 - [x] Pievienotas metodes
-- [x] Pieliktas vairākas sastāvdaļas
+- [x] Pieliktas vairākas sastāvdaļas :onion: 
 - [x] Ielikts jauns atribūts dzēriens :beverage_box:
